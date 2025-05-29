@@ -1,3 +1,8 @@
+import pandas as pd
+import streamlit as st
+import matplotlib.pyplot as plt
+import numpy as np
+
 st.title("Olá Josir, aqui está meu gráfico!")
 
 df = pd.read_csv('https://perfil-i.ibict.br/media/uploads/user_sum.csv')
@@ -34,3 +39,13 @@ if 'total' in df.columns and 'month' in df.columns:
     st.pyplot(fig)
 else:
     st.warning("As colunas 'month' e 'total' não estão disponíveis.")
+
+
+st.subtitle(*"Avaliação do gráfico"*)
+
+opcao = st.radio("O gráfico foi criativo?", ('Sim', 'Não'))
+
+if opcao == 'Sim':
+    st.success("Uhuuuul! Obrigada professor!")
+else:
+    st.info("Poxa, tentei.... Da próxima vez faço um gráfico com as cores do América")
