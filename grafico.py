@@ -5,11 +5,16 @@ import numpy as np
 
 st.title("Olá Josir, aqui está meu gráfico!")
 
-df = pd.read_csv('https://perfil-i.ibict.br/media/uploads/user_sum.csv')
+# Carrega os dados
+try:
+    df = pd.read_csv('https://perfil-i.ibict.br/media/uploads/user_sum.csv')
+except Exception as e:
+    st.error(f"Erro ao carregar os dados: {e}")
+    st.stop()
 
+# Verifica se as colunas existem
 if 'total' in df.columns and 'month' in df.columns:
     df = df.sort_values(by='total')
-
     categories = df['month']
     values = df['total']
     N = len(df)
@@ -37,10 +42,11 @@ if 'total' in df.columns and 'month' in df.columns:
 
     plt.tight_layout()
     st.pyplot(fig)
-else:
-    st.warning("As colunas 'month' e 'total' não estão disponíveis.")
 
-st.markdown("### Avaliação do gráfico")
+else:
+    st.warning("As colunas 'month' e 'total' não estão disponíveis no arquivo CSV.")
+
+st.title("### Avaliação do gráfico")
 
 opcao = st.radio("O gráfico foi criativo?", ('Sim', 'Não'))
 
@@ -48,5 +54,4 @@ if opcao == 'Sim':
     st.success("Uhuuuul! Obrigada professor!")
 else:
     st.info("Poxa, tentei.... Da próxima vez faço um gráfico com as cores do América")
-
 
