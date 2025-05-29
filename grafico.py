@@ -1,9 +1,4 @@
-import pandas as pd
-import streamlit as st
-import matplotlib.pyplot as plt
-import numpy as np
-
-st.title("Circular bar plot do arco-íris!")
+st.title("Olá Josir, aqui está meu gráfico!")
 
 df = pd.read_csv('https://perfil-i.ibict.br/media/uploads/user_sum.csv')
 
