@@ -41,7 +41,7 @@ else:
     st.warning("As colunas 'month' e 'total' não estão disponíveis.")
 
 
-st.subtitle(*"Avaliação do gráfico"*)
+st.subtitle(*"Avaliação do gráfico")
 
 opcao = st.radio("O gráfico foi criativo?", ('Sim', 'Não'))
 
