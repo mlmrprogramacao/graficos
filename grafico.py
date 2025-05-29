@@ -43,10 +43,8 @@ if 'total' in df.columns and 'month' in df.columns:
     plt.tight_layout()
     st.pyplot(fig)
 
-else:
-    st.warning("As colunas 'month' e 'total' não estão disponíveis no arquivo CSV.")
 
-st.title("### Avaliação do gráfico")
+st.title("Avaliação do gráfico")
 
 opcao = st.radio("O gráfico foi criativo?", ('Sim', 'Não'))
 
