@@ -41,7 +41,7 @@ else:
     st.warning("As colunas 'month' e 'total' não estão disponíveis.")
 
 
-st.subtitle("Avaliação do gráfico")
+st.subheader("Avaliação do gráfico")
 
 opcao = st.radio("O gráfico foi criativo?", ('Sim', 'Não'))
 
@@ -49,3 +49,4 @@ if opcao == 'Sim':
     st.success("Uhuuuul! Obrigada professor!")
 else:
     st.info("Poxa, tentei.... Da próxima vez faço um gráfico com as cores do América")
+
